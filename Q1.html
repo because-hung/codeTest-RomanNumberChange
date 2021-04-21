@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+  function RomanNumberChange(test){
+var testAry = test.split('')
+console.log(testAry)
+    var newAns = []
+    var str = 0;
+    var RomanNumber={ M:1000, CM:900, D:500, C:100, XC:90, L:50, XL:40, X:10, IX:9, V:5, IV:4, I:1 }
+var RomanAry = Object.keys(RomanNumber)
+
+console.log(RomanAry)
+
+for(var i=0;i<testAry.length;i++){
+  
+  for(var j=0;j<RomanAry.length;j++){
+
+    if(testAry[i] == RomanAry[j])
+ 
+ newAns.push(RomanAry[j])
+   
+  }
+
+}
+
+console.log(newAns)
+
+for(var i=0;i<newAns.length;i++){
+      RomanNumber[newAns[i]] < RomanNumber[newAns[i+1]] ? str -=RomanNumber[newAns[i]]  :str += RomanNumber[newAns[i]]
+}
+
+console.log(str)
+return str
+
+}
+
+RomanNumberChange('IV')
+RomanNumberChange('XLVI')
+
+</script>
+</body>
+</html>
