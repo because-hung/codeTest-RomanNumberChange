@@ -12,30 +12,18 @@
 
   function RomanNumberChange(test){
 var testAry = test.split('')
-console.log(testAry)
-    var newAns = []
+// console.log(testAry)
+ 
     var str = 0;
     var RomanNumber={ M:1000, CM:900, D:500, C:100, XC:90, L:50, XL:40, X:10, IX:9, V:5, IV:4, I:1 }
 var RomanAry = Object.keys(RomanNumber)
 
-console.log(RomanAry)
+// console.log(RomanAry)
+
+
 
 for(var i=0;i<testAry.length;i++){
-  
-  for(var j=0;j<RomanAry.length;j++){
-
-    if(testAry[i] == RomanAry[j])
- 
- newAns.push(RomanAry[j])
-   
-  }
-
-}
-
-console.log(newAns)
-
-for(var i=0;i<newAns.length;i++){
-      RomanNumber[newAns[i]] < RomanNumber[newAns[i+1]] ? str -=RomanNumber[newAns[i]]  :str += RomanNumber[newAns[i]]
+      RomanNumber[testAry[i]] < RomanNumber[testAry[i+1]] ? str -=RomanNumber[testAry[i]]  :str += RomanNumber[testAry[i]]
 }
 
 console.log(str)
@@ -45,6 +33,25 @@ return str
 
 RomanNumberChange('IV')
 RomanNumberChange('XLVI')
+
+
+// 比對  多寫的
+
+   // var newAns = []
+   
+// for(var i=0;i<testAry.length;i++){
+  
+//   for(var j=0;j<RomanAry.length;j++){
+
+//     if(testAry[i] == RomanAry[j])
+ 
+//  newAns.push(RomanAry[j])
+   
+//   }
+
+// }
+
+// console.log(newAns)
 
 </script>
 </body>
